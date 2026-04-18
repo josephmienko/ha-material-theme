@@ -1,9 +1,9 @@
-<p align="center">
+
   <picture>
     <source media="(max-width: 700px)" srcset="header-stacked-inline.svg">
     <img src="header-wide-inline.svg" alt="ha-material-theme" />
   </picture>
-</p>
+
 
 <p align="left">
   Part of the Crooked Sentry universe&nbsp;|&nbsp;
