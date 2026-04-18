@@ -1,0 +1,8 @@
+[run]
+branch = true
+source =
+    scripts
+
+[report]
+omit =
+    tests/*
