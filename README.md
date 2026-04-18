@@ -71,13 +71,13 @@ ha-material-theme/
 3. Run validation:
 
    ```bash
-   python3 -m pip install pytest
-   pytest -q
+   python3 -m pip install pytest pytest-cov
+   pytest --cov=scripts --cov-config=.coveragerc --cov-report=term-missing --cov-report=xml:coverage.xml -q
    ```
 
 4. Commit both the source JSON and the generated `themes/ha-material-theme.yaml`.
 
-The CI workflow fails if the generated theme file is out of date.
+The CI workflow fails if the generated theme file is out of date and uploads coverage to Codecov from GitHub Actions via OIDC.
 
 ## Extraction Mapping
 
