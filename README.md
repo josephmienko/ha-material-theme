@@ -1,4 +1,3 @@
-<h1 style="display: none;"><a href="https://josephmienko.github.io/ha-material-theme/">ha-material-theme</a></h1>
 <picture align="center">
   <!-- Desktop Dark Mode -->
   <source media="(min-width: 769px) and (prefers-color-scheme: dark)" srcset="assets/header-wide-dark-inline.svg">
@@ -65,11 +64,13 @@ Material 3 inspired Home Assistant theme with light, medium, and high contrast v
    ```bash
    python3 -m pip install pytest pytest-cov
    pytest --cov=scripts --cov-config=.coveragerc --cov-report=term-missing --cov-report=xml:coverage.xml -q
-  # Design Notes
+
+# Design Notes
 
 - `src/material-theme.json` is the source of truth (generated from Material Theme Builder)
 - `themes/ha-material-theme.yaml` is the only HACS runtime artifact
 - Variants maintain consistency with the M3 design system used across Crooked Sentry components
+
 ## Notes
 
 - `src/material-theme.json` is the source of truth.
