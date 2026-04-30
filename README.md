@@ -1,4 +1,4 @@
-<h1><a href="https://josephmienko.github.io/ha-material-theme/">ha-material-theme</a></h1>
+<h1 style="display: none;"><a href="https://josephmienko.github.io/ha-material-theme/">ha-material-theme</a></h1>
 <picture align="center">
   <!-- Desktop Dark Mode -->
   <source media="(min-width: 769px) and (prefers-color-scheme: dark)" srcset="assets/header-wide-dark-inline.svg">
@@ -19,47 +19,20 @@
   </span>
 </b>
 
-## Overview
+Material 3 inspired Home Assistant theme with light, medium, and high contrast variants. Install via HACS or manually to your themes directory.
 
-`ha-material-theme` is a HACS theme repository for a Material 3 inspired Home Assistant theme.
+## Configuration
 
-The install surface is a single generated file under `themes/`. Everything else in the repo is maintainer tooling.
+### Installation Instructions
 
-## Repo Layout
-
-```text
-ha-material-theme/
-  .github/
-    workflows/
-      validate.yml
-  scripts/
-    build_theme.py
-  screenshots/
-  src/
-    material-theme.json
-  tests/
-    test_build_theme.py
-  themes/
-    ha-material-theme.yaml
-  .gitignore
-  README.md
-  hacs.json
-```
-
-## Included Themes
-
-- `Crooked Material`
-- `Crooked Material Medium Contrast`
-- `Crooked Material High Contrast`
-
-## HACS Install
+#### HACS Install
 
 1. Add the repository to HACS as a `Theme`.
 2. Install `HA Material Theme`.
 3. Restart Home Assistant if HACS prompts for it.
 4. Select one of the included theme names in your user profile.
 
-## Manual Install
+#### Manual Install
 
 1. Copy `themes/ha-material-theme.yaml` into your Home Assistant `themes/` directory.
 2. Ensure your `configuration.yaml` includes:
@@ -72,7 +45,13 @@ ha-material-theme/
 3. Restart Home Assistant.
 4. Select one of the included theme names in your user profile.
 
-## Maintainer Workflow
+### Available Themes
+
+- `Crooked Material`
+- `Crooked Material Medium Contrast`
+- `Crooked Material High Contrast`
+
+### Maintainer Workflow
 
 1. Replace `src/material-theme.json` with the latest Material Theme Builder export.
 2. Rebuild the install artifact:
@@ -86,20 +65,11 @@ ha-material-theme/
    ```bash
    python3 -m pip install pytest pytest-cov
    pytest --cov=scripts --cov-config=.coveragerc --cov-report=term-missing --cov-report=xml:coverage.xml -q
-   ```
+  # Design Notes
 
-4. Commit both the source JSON and the generated `themes/ha-material-theme.yaml`.
-
-The CI workflow fails if the generated theme file is out of date and uploads coverage to Codecov from GitHub Actions via OIDC.
-
-## Extraction Mapping
-
-Current source files in this monorepo map to the extracted repo like this:
-
-- `homeassistant/themes/crooked_material/material-theme-crooked.json` -> `src/material-theme.json`
-- `scripts/build_ha_theme.py` -> `scripts/build_theme.py`
-- `homeassistant/themes/crooked_material/crooked_material.yaml` -> `themes/ha-material-theme.yaml`
-
+- `src/material-theme.json` is the source of truth (generated from Material Theme Builder)
+- `themes/ha-material-theme.yaml` is the only HACS runtime artifact
+- Variants maintain consistency with the M3 design system used across Crooked Sentry components
 ## Notes
 
 - `src/material-theme.json` is the source of truth.
